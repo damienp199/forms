@@ -3,6 +3,7 @@ class Popup {
       this.config = config;
       this.popupElement = document.getElementById('popup');
       this.closeButton = document.getElementById('close-popup');
+      this.hasShownThisSession = false;
   }
 
   init() {
@@ -33,8 +34,10 @@ class Popup {
   }
 
   showPopup() {
+      if (this.hasShownThisSession) return;
       this.popupElement.style.display = 'flex';
       this.setLastShownDate();
+      this.hasShownThisSession = true;
   }
 
   setupCloseButton() {
@@ -57,8 +60,6 @@ class Popup {
           case 'disabled':
               // Do nothing
               break;
-          default:
-              console.error('Invalid popup method specified');
       }
   }
 
@@ -71,7 +72,7 @@ class Popup {
   setupScrollTrigger() {
       window.addEventListener('scroll', () => {
           const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-          if (scrollPercentage > 80) this.showPopup();
+          if (scrollPercentage >= 80) this.showPopup();
       });
   }
 }
