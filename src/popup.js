@@ -1,3 +1,4 @@
+
 class Popup {
   constructor(config) {
       this.config = config;
