@@ -95,9 +95,8 @@
   })();
 
 
-
+/*
 // inline form
-
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.activecampaign-form').forEach(function(el) {
             var formId = el.getAttribute('data-form-id') || 'wfo'; // Default ID if not provided
@@ -112,7 +111,6 @@
 
 
 // Email format validation on forms
-
 document.addEventListener("DOMContentLoaded", function() {
   function validateEmailForms() {
     const forms = document.querySelectorAll('.subscribe-form');
@@ -147,3 +145,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   observer.observe(document.body, { childList: true, subtree: true });
 });
+
+*/
